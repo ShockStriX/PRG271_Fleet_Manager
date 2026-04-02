@@ -1,0 +1,10 @@
+50,Klerksdorp,Vryburg,Morokweng,Kuruman,Kathu,601,120.2
+51,Bloemfontein,Reddersburg,Smithfield,Rouxville,Maletswai,207,41.4
+52,Cape Town,Stellenbosch,Franschhoek,Villiersdorp,Worcester,156,31.2
+53,Cape Town,Philadelphia,Hopefield,Langebaan,Vredenburg,194,38.8
+54,Gqeberha,Jeffreys Bay,George,Hermanus,Stellenbosch,782,156.4
+55,Springbok,Pofadder,Upington,Kimberley,Welkom,1025,205
+56,Pretoria,Midrand,Sandton,Benoni,Delmas,122,24.4
+57,Pretoria,Bela-Bela,Mokopane,Polokwane,Mooketsi,369,73.8
+58,Durban,Pietermaritzburg,Harrismith,Heidelberg,Springs,548,109.6
+59,Polokwane,Johannesburg,Durban,Bloemfontein,Cape Town,2525,505
