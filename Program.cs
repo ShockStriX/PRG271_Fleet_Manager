@@ -12,9 +12,6 @@ namespace Fleet_Manager
     {
         static void Main(string[] args)
         {
-            FileManager.loadFiles();
-
-
             /*login login = new login();
 
             bool isLoggedIn = login.loginPrompt();

@@ -43,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bakkie.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routes.cs" />
+    <Compile Include="Van.cs" />
     <Compile Include="Vehicle.cs" />
+    <Compile Include="Workhorse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

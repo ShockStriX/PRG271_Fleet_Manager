@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Fleet_Manager
         int vehicleID;
         int mileage;
         int currentJob;
-        string type;
+        protected string type;
         int year;
         string brand;
         string model;
@@ -71,7 +72,7 @@ namespace Fleet_Manager
             get { return age; }
             set { age = value; }
         }
-        private int calculateAgeOfCar()
+        protected int calculateAgeOfCar()
         {
             int currentYear = DateTime.Now.Year;
 
@@ -80,12 +81,11 @@ namespace Fleet_Manager
 
         public Vehicle() { }
 
-        public Vehicle(int _vehicleID, int _mileage, int _currentJob, string _type, int _year, string _brand, string _model, string _licensePlate)
+        public Vehicle(int _vehicleID, int _mileage, int _currentJob, int _year, string _brand, string _model, string _licensePlate)
         {
             this.vehicleID = _vehicleID;
             this.mileage = _mileage;
             this.currentJob = _currentJob;
-            this.type = _type;
             this.year = _year;
             this.brand = _brand;
             this.model = _model;
