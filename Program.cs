@@ -12,7 +12,10 @@ namespace Fleet_Manager
     {
         static void Main(string[] args)
         {
-            login login = new login();
+            FileManager.loadFiles();
+
+
+            /*login login = new login();
 
             bool isLoggedIn = login.loginPrompt();
 
@@ -24,7 +27,7 @@ namespace Fleet_Manager
             {
                 Console.WriteLine("Access denied. Terminating...");
                 
-            }
+            } */
         }
     }
 }

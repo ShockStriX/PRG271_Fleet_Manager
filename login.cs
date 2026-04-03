@@ -14,7 +14,8 @@ namespace Fleet_Manager
 
         public bool loginPrompt()
         {
-            Console.WriteLine("=== Fleet Manager Login ===");
+            int loginAttempts = 2;
+            Console.WriteLine("=== Welcome to RoadLink ===");
             Console.WriteLine("Please enter your credentials");
             Console.Write("Username: ");
             string username = Console.ReadLine();
@@ -22,15 +23,30 @@ namespace Fleet_Manager
             Console.Write("Password: ");
             string password = readMaskedPassword();
 
-            if (username == ValidUsername && password == ValidPassword)
+            if (username == ValidUsername && password == ValidPassword && loginAttempts > 0)
             {
                 Console.WriteLine("\nLogin Successful. Welcome!\n");
                 return true;
             }
-            else
+            else while(loginAttempts>0)
             {
-                return false;
+                Console.WriteLine("\nYour username and/or password was incorrect, please try again...\nYou have {0} attempts remaining\n", loginAttempts);
+                Console.Write("Username: ");
+                username = Console.ReadLine();
+                Console.Write("Password: ");
+                password = readMaskedPassword();
+
+                if (username == ValidUsername && password == ValidPassword)
+                {
+                    Console.WriteLine("\nLogin Successful. Welcome!\n");
+                    return true;
+                }
+                else
+                {
+                    loginAttempts--;
+                }
             }
+            return false;
         }
 
         private string readMaskedPassword() //Hides the password the user enters
