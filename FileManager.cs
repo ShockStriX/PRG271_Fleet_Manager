@@ -10,16 +10,16 @@ namespace Fleet_Manager
 {
     internal class FileManager
     {
-        public static List<Vehicle> loadVehicles()
+        public static async Task<List<Vehicle>> loadVehicles()
         {
             List<Vehicle> vehicles = new List<Vehicle>();
             try
             {
                 StreamReader srVehicles = new StreamReader(@".\Vehicles.txt");
 
-                srVehicles.ReadLine(); //Skips headers
+                await srVehicles.ReadLineAsync(); //Skips headers
 
-                string line = srVehicles.ReadLine();
+                string line = await srVehicles.ReadLineAsync();
 
                 while (line != null)
                 {
@@ -65,12 +65,12 @@ namespace Fleet_Manager
 
                         default:
                             Console.WriteLine($"Unknown vehicle type: {vehicleType}, skipping...");
-                            line = srVehicles.ReadLine();
+                            line = await srVehicles.ReadLineAsync();
                             continue;
                     }
 
                     vehicles.Add(v);
-                    line = srVehicles.ReadLine();
+                    line = await srVehicles.ReadLineAsync();
                 }
 
                 srVehicles.Close();
@@ -87,7 +87,7 @@ namespace Fleet_Manager
             return vehicles;
         }
 
-        public static List<Job> loadJobs()
+        public static async Task<List<Job>> loadJobs()
         {
             List<Job> jobs = new List<Job>();
 
@@ -95,9 +95,9 @@ namespace Fleet_Manager
             {
                 StreamReader srJobs = new StreamReader(@".\Jobs.txt");
 
-                srJobs.ReadLine();
+                await srJobs.ReadLineAsync();
 
-                string line = srJobs.ReadLine();
+                string line = await srJobs.ReadLineAsync();
 
                 while (line != null)
                 {
@@ -108,7 +108,7 @@ namespace Fleet_Manager
                         int.Parse(values[1]));  //currentRoute
 
                     jobs.Add(j);
-                    line = srJobs.ReadLine();
+                    line = await srJobs.ReadLineAsync();
                 }
 
                 srJobs.Close();
@@ -125,7 +125,7 @@ namespace Fleet_Manager
             return jobs;
         }
 
-        public static List<Routes> loadRoutes()
+        public static async Task<List<Routes>> loadRoutes()
         {
             List<Routes> routes = new List<Routes>();
 
@@ -135,7 +135,7 @@ namespace Fleet_Manager
 
                 srRoutes.ReadLine();
 
-                string line = srRoutes.ReadLine();
+                string line = await srRoutes.ReadLineAsync();
 
                 while (line != null)
                 {
@@ -153,7 +153,7 @@ namespace Fleet_Manager
                         //Average Kilometres
 
                     routes.Add(r);
-                    line = srRoutes.ReadLine();
+                    line = await srRoutes.ReadLineAsync();
                 }
                 srRoutes.Close();
             }
